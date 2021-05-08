@@ -320,7 +320,7 @@
 }
 
 - (CGFloat)spacing{
-    return 6.f;
+    return 10.f;
 }
 
 - (CGFloat)textViewPadding
