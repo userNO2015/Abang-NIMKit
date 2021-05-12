@@ -197,7 +197,13 @@
 
 - (NSMutableArray *)customSortRecents:(NSMutableArray *)recentSessions
 {
-    return self.recentSessions;
+    NSMutableArray *arr = [NSMutableArray array];
+    for (NIMRecentSession *s in self.recentSessions) {
+        if (s.session.sessionType == NIMSessionTypeP2P) {
+            [arr addObject:s];
+        }
+    }
+    return arr;
 }
 
 #pragma mark - NIMLoginManagerDelegate
